@@ -1,66 +1,42 @@
-import { useRef } from 'react';
-import moon from './images/moon.png';
-import land from './images/land.png';
-import cat from './images/cat.gif';
+'use client';
+import React from 'react';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import TextBlock from './textBlock';
 import './App.css';
 
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-
 function App() {
-  const ref = useRef();
-
   return (
-    <div>
-      <Parallax pages={4} ref={ref}>
-        {/* <ParallaxLayer speed={1}>
-            <h2>Welcome to my website</h2>
+    <div className="App">
+      <Parallax pages={2} style={{ top: '0', left: '0' }} class="animation">
+        <ParallaxLayer offset={0} speed={0.25}>
+          <div class="animation_layer parallax" id="artback"></div>
         </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={0.5}>
-            <h2>Web development is fun!</h2>
-        </ParallaxLayer> */}
-
-        <ParallaxLayer
-          offset={0}
-          speed={1}
-          factor={2}
-          style={{
-            backgroundImage: `url(${moon})`,
-            backgroundSize: 'cover',
-          }}
-        />
-
-        <ParallaxLayer
-          offset={2}
-          speed={1}
-          factor={4}
-          style={{
-            backgroundImage: `url(${land})`,
-            backgroundSize: 'cover',
-          }}
-        ></ParallaxLayer>
-
-        <ParallaxLayer
-          sticky={{ start: 0.9, end: 2.5 }}
-          style={{ textAlign: 'center' }}
-        >
-          <img src={cat} />
+        <ParallaxLayer offset={0} speed={0.3}>
+          <div class="animation_layer parallax" id="mountain"></div>
         </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0.2}
-          speed={0.05}
-          onClick={() => ref.current.scrollTo(3)}
-        >
-          <h2>Welcome to my website</h2>
+        <ParallaxLayer offset={0} speed={-0.1}>
+          <div class="animation_layer parallax" id="logoland"></div>
         </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={3}
-          speed={2}
-          onClick={() => ref.current.scrollTo(0)}
-        >
-          <h2>WoW!</h2>
+        <ParallaxLayer offset={0} speed={0.3}>
+          <div class="animation_layer parallax" id="jungle1"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.35}>
+          <div class="animation_layer parallax" id="jungle2"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.5}>
+          <div class="animation_layer parallax" id="jungle3"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.45}>
+          <div class="animation_layer parallax" id="jungle4"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.40}>
+          <div class="animation_layer parallax" id="manonmountain"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.35}>
+          <div class="animation_layer parallax" id="jungle5"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.25}>
+          <TextBlock />
         </ParallaxLayer>
       </Parallax>
     </div>
